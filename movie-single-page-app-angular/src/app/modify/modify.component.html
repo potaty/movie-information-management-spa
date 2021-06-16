@@ -1,0 +1,59 @@
+<div class="container">
+  <a routerLink="/"> < back</a>
+  <h2>Modify Movie Information</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="createForm">
+    <div class="form-group">
+      <label for="name">Name: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="director">Director: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="director"
+        required
+        formControlName="director"
+      />
+    </div>
+    <div class="form-group">
+      <label for="year">Year: </label>
+      <input
+        type="number"
+        class="form-control"
+        id="year"
+        required
+        formControlName="year"
+      />
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre: </label>
+      <select class="form-control" id="power" required formControlName="genre">
+        <option *ngFor="let genre of genres; index as i" [value]="i">{{
+          genre
+        }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="note">Note: </label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="note"
+        formControlName="note"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!createForm.valid" class="btn">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+<i>Need help? <a routerLink="/help-modify">Here</a></i>

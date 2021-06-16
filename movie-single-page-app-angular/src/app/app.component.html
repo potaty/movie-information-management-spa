@@ -1,0 +1,10 @@
+<style>
+.msg-container {
+  padding: 10px;
+}
+</style>
+<div class="msg-container" *ngIf="moviesService.showMsg" [ngStyle]="{'color': moviesService.msgColor, 'background-color': moviesService.msgBgColor}"> 
+  {{moviesService.msgText}}
+</div>
+<h1> Movie Management </h1>
+<router-outlet></router-outlet>

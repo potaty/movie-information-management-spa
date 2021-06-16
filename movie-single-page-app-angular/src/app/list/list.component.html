@@ -1,0 +1,48 @@
+<div class="content" role="main" class="table-container">
+  <a routerLink="/add-movie" class="add-button">+ Add Movie</a>
+  <div>
+    Search movie by name:<input
+      type="text"
+      id="search-word"
+      (keyup)="onKey($event)"
+      [value]="moviesService.searchText"
+    />
+  </div>
+  <table *ngIf="movies.length !== 0">
+    <tr>
+      <th>Name</th>
+      <th>Director</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Note</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let movie of movies; index as i">
+      <ng-container
+        *ngIf="
+          moviesService.searchText === '' ||
+          movie.name.toLowerCase().includes(moviesService.searchText)
+        "
+      >
+        <td>
+          <i
+            ><b>{{ movie.name }}</b></i
+          >
+        </td>
+        <td>{{ movie.director }}</td>
+        <td>{{ movie.year }}</td>
+        <td>{{ genres[movie.genre] }}</td>
+        <td>{{ movie.note }}</td>
+        <td>
+          <a class="button" role="button" (click)="recordIthMovie(i)">Modify</a>
+          <a class="button" role="button" (click)="openDialog(i)">Delete</a>
+        </td>
+      </ng-container>
+    </tr>
+  </table>
+  <div *ngIf="movies.length === 0">
+    movie list is empty, please add some movie
+    <a routerLink="/add-movie">here</a>
+  </div>
+</div>
+<i>Need help? <a routerLink="/help">Here</a></i>

@@ -1,0 +1,118 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="bundle.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+/>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  var $ = jQuery;
+</script>
+<body>
+  <div>
+    <h1 style="text-align: center;">Movie Management</h1>
+    <div style="margin: 10px;">
+      <label for="search">search by name</label><br /><input
+        type="search"
+        id="search"
+      />
+    </div>
+    <div class="panel-body">
+      <div class="tbl_movie_data"></div>
+      <h3>Add New Movie</h3>
+      <form name="form">
+        <label for="name">Movie Name:</label><br />
+        <input type="text" id="name" name="name" value="" required /><br />
+        <label for="director">Director</label><br />
+        <input
+          type="text"
+          id="director"
+          name="director"
+          value=""
+          required
+        /><br />
+        <label for="genre">Genre</label><br />
+        <select id="genre" name="genre">
+          <option value="1">Comedy</option>
+          <option value="2">Horror</option>
+          <option value="3">Action</option>
+          <option value="4">Drama</option>
+          <option value="5">Thriller</option>
+          <option value="6">Romantic</option>
+        </select>
+        <br />
+        <label for="year">Year</label><br />
+        <input type="number" id="year" name="year" required /><br />
+        <label for="note">Note</label><br />
+        <input type="text" id="note" name="note" value="" /><br /><br />
+        <input type="submit" value="submit" id="submit" />
+      </form>
+    </div>
+  </div>
+
+  <div id="delete_modal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="icon-box">
+            <i class="material-icons">&#xE5CD;</i>
+          </div>
+          <h4 class="modal-title">Are you sure?</h4>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-hidden="true"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Do you really want to delete this movie? This process cannot be
+            undone.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-dismiss="modal">
+            Cancel
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger btn-delete"
+            data-dismiss="modal"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <dialog id="duplicate" style="color: red;"
+    >This movie name is duplicated. Please change another name.
+  </dialog>
+  <dialog id="addsuccess" style="color: green;"
+    >Add movie successfully!
+  </dialog>
+  <dialog id="modifysuccess" style="color: green;"
+    >Update movie successfully!
+  </dialog>
+  <dialog id="deletesuccess" style="color: green;"
+    >Delete movie successfully!
+  </dialog>
+  <dialog id="yearfailed" style="color: red;"
+    >Modify year failed! Year must be number!
+  </dialog>
+  <dialog id="nameduplicate" style="color: red;"
+    >Movie name must be unique! Update operation has not saved!
+  </dialog>
+  <dialog id="emptystring" style="color: red;">
+    Exists empty string in the infomation. Please do not use empty string except
+    note field.
+  </dialog>
+</body>
+<link rel="stylesheet" href="style.css" />
