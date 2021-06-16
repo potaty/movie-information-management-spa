@@ -14,7 +14,7 @@ npm install
 ```
 2. open the dist/index.html in web browser
 
-![Uploading 2.jpg…]()
+![1](https://user-images.githubusercontent.com/5163148/122298500-c2c58a00-cef4-11eb-9cc1-3f3034a0e62c.jpg)
 
 ### RUN movie-single-page-app-angular
 1. 
@@ -28,4 +28,4 @@ npm install
 ng serve
 ```
 
-![1](https://user-images.githubusercontent.com/5163148/122298444-ac1f3300-cef4-11eb-8c89-21cd7f795e1d.jpg)
+![2](https://user-images.githubusercontent.com/5163148/122298444-ac1f3300-cef4-11eb-8c89-21cd7f795e1d.jpg)
